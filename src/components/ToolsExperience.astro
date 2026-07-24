@@ -1,5 +1,5 @@
 <section class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-16 py-12 sm:py-20 flex flex-col items-center lg:items-stretch">
-    <!-- CSS Animasi Marquee dan Efek Gradien -->
+    <!-- Animasi Marquee -->
     <style>
         @keyframes marquee {
             from { transform: translate3d(0, 0, 0); }
@@ -42,10 +42,6 @@
             }
         }
 
-        /* 
-           Masking HANYA diterapkan ke wrapper ikon, bukan ke background.
-           Ini akan membuat ikon memudar secara halus di ujung kiri dan kanan.
-        */
         .marquee-mask {
             -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
             mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
@@ -61,18 +57,12 @@
             </h2>
         </div>
 
-        <!-- 
-            BUNGKUS LUAR: Background Murni dari CSS (tanpa gambar).
-            Menggunakan warna dan pengaturan persis dari spesifikasi Figma Anda.
-        -->
         <div class="w-full max-w-5xl py-12 sm:py-16 relative flex justify-center items-center" 
              style="background: radial-gradient(ellipse 50% 35% at 50% 50%, #D2AA90 0%, #E5E6E6 100%);">
             
-            <!-- BUNGKUS DALAM: Tempat ikon berjalan dan efek transparan ujung (Mask) -->
             <div class="w-full max-w-4xl overflow-hidden marquee-mask flex">
                 <div class="animate-marquee">
                     <div class="marquee-track">
-                        <!-- Kelompok Ikon Pertama -->
                         <div class="marquee-group">
                             <img src="/icons/figma.svg" alt="Figma" loading="lazy" class="h-16 sm:h-20 md:h-24 w-auto shrink-0 drop-shadow-md">
                             <img src="/icons/vsc.svg" alt="VS Code" loading="lazy" class="h-16 sm:h-20 md:h-24 w-auto shrink-0 drop-shadow-md">
@@ -88,7 +78,7 @@
                             <img src="/icons/css.svg" alt="CSS3" loading="lazy" class="h-16 sm:h-20 md:h-24 w-auto shrink-0 drop-shadow-md">
                         </div>
                         
-                        <!-- Kelompok Ikon Kedua (Duplikat untuk Seamless Loop) -->
+                        <!--  Seamless Loop -->
                         <div class="marquee-group" aria-hidden="true">
                             <img src="/icons/figma.svg" alt="Figma" loading="lazy" class="h-16 sm:h-20 md:h-24 w-auto shrink-0 drop-shadow-md">
                             <img src="/icons/vsc.svg" alt="VS Code" loading="lazy" class="h-16 sm:h-20 md:h-24 w-auto shrink-0 drop-shadow-md">

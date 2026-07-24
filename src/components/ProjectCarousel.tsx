@@ -96,7 +96,7 @@ export const ProjectCarousel = ({ testimonials, autoplay = true }: ProjectCarous
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20">
         
         {/* Images Container */}
-        {/* Menggunakan [perspective:1000px] dari arbitrary values Tailwind untuk efek 3D */}
+        {}
         <div className="relative w-full h-96 perspective-[1000px]" ref={imageContainerRef}>
           {testimonials.map((testimonial, index) => (
             <img 

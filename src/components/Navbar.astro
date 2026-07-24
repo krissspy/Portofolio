@@ -1,74 +1,57 @@
 <nav class="sticky top-0 z-50 w-full flex justify-center md:justify-end py-8 px-8 md:px-16 gap-6 md:gap-8 text-sm md:text-base font-inter font-light">
     <a href="#home" class="nav-item text-[#845E4D] border-b-2 border-[#845E4D] pb-1 transition-all duration-300">Home</a>
-    
     <a href="#tools" class="nav-item text-stone-500 border-b-2 border-transparent hover:text-[#845E4D] pb-1 transition-all duration-300">Tools</a>
-    
     <a href="#experience" class="nav-item text-stone-500 border-b-2 border-transparent hover:text-[#845E4D] pb-1 transition-all duration-300">Experience</a>
-    
     <a href="#project" class="nav-item text-stone-500 border-b-2 border-transparent hover:text-[#845E4D] pb-1 transition-all duration-300">Project</a>
-    
     <a href="#social-media" class="nav-item text-stone-500 border-b-2 border-transparent hover:text-[#845E4D] pb-1 transition-all duration-300">Social Media</a>
 </nav>
 
 <script>
-    // Skrip ini akan dieksekusi di browser pengunjung
     const navItems = document.querySelectorAll('.nav-item');
-
-    // Fungsi untuk update navbar highlight
     function updateNavHighlight() {
         const sections = ['home', 'tools', 'experience', 'project', 'social-media'];
         let currentSection = 'home';
 
-        // Cek mana section yang paling terlihat di viewport
+        // Cek section di viewport
         for (const sectionId of sections) {
             const section = document.querySelector(`#${sectionId}`);
             if (section) {
                 const rect = section.getBoundingClientRect();
-                // Jika section berada di bagian atas viewport, tandai sebagai current
                 if (rect.top <= 150) {
                     currentSection = sectionId;
                 }
             }
         }
 
-        // Update semua nav items
         navItems.forEach(item => {
-            const href = item.getAttribute('href')?.substring(1) ?? ''; // Hapus # dari href
+            const href = item.getAttribute('href')?.substring(1) ?? '';
             
             if (href === currentSection) {
-                // Highlight item yang aktif
                 item.classList.remove('text-stone-500', 'border-transparent', 'font-light');
                 item.classList.add('text-[#6B4423]', 'border-[#6B4423]', 'font-bold');
             } else {
-                // Non-aktif items
                 item.classList.remove('text-[#6B4423]', 'border-[#6B4423]', 'font-bold');
                 item.classList.add('text-stone-500', 'border-transparent', 'font-light');
             }
         });
     }
 
-    // Listen to scroll events
     window.addEventListener('scroll', updateNavHighlight);
-    // Juga jalankan saat halaman pertama kali load
     updateNavHighlight();
 
-    // Click handler tetap berfungsi seperti sebelumnya
     navItems.forEach(item => {
         item.addEventListener('click', function(this: HTMLAnchorElement, e) {
             e.preventDefault();
             
-            // Smooth scroll ke section yang dituju
             const targetId = this.getAttribute('href');
             if (!targetId) return;
             
             if (targetId === '#home') {
-                // Scroll ke atas halaman
                 window.scrollTo({
                     top: 0,
                     behavior: 'smooth'
                 });
             } else {
-                // Scroll ke section sesuai ID
                 const targetSection = document.querySelector(targetId);
                 if (targetSection) {
                     targetSection.scrollIntoView({
