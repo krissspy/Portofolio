@@ -116,13 +116,13 @@ export const ProjectCarousel = ({ testimonials, autoplay = true }: ProjectCarous
         <div className="flex flex-col justify-between">
           <AnimatePresence mode="wait">
             <motion.div key={activeIndex} variants={quoteVariants} initial="initial" animate="animate" exit="exit" transition={{ duration: 0.3, ease: "easeInOut" }}>
-              <h3 className="text-2xl sm:text-3xl font-bold font-poppins text-[#382B25] mb-1">
+              <h3 className="text-2xl sm:text-3xl font-bold font-poppins text-[#382B25] dark:text-[#E5D5CD] mb-1">
                 {activeTestimonial.name}
               </h3>
-              <p className="text-[#6D5447] font-medium mb-6 sm:mb-8">
+              <p className="text-[#6D5447] dark:text-[#928883] font-medium mb-6 sm:mb-8">
                 {activeTestimonial.designation}
               </p>
-              <motion.p className="text-gray-700 font-inter leading-relaxed text-sm sm:text-base">
+              <motion.p className="text-gray-700 dark:text-[#E0E0E0] font-inter leading-relaxed text-sm sm:text-base">
                 {activeTestimonial.quote.split(" ").map((word, i) => (
                   <motion.span key={i} initial={{ filter: "blur(10px)", opacity: 0, y: 5 }} animate={{ filter: "blur(0px)", opacity: 1, y: 0 }} transition={{ duration: 0.22, ease: "easeInOut", delay: 0.025 * i }} className="inline-block">
                     {word}&nbsp;
