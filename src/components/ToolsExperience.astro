@@ -107,7 +107,7 @@
             </h2>
         </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16">
+        <div class="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-8 sm:gap-12 lg:gap-16 items-center">
             
             <div class="relative border-l-[3px] border-[#D0A98F] pl-6 sm:pl-8 ml-2 sm:ml-4 lg:ml-0 py-2 space-y-8 sm:space-y-12">
                 
@@ -137,13 +137,17 @@
 
             </div>
 
-            <div class="relative flex justify-center lg:justify-end items-end h-60 sm:h-80 md:h-100 lg:h-125 mt-8 lg:mt-0">       
-                <img 
-                    src="/exp-picture.webp" 
-                    alt="Experience Avatar" 
-                    loading="lazy"
-                    class="max-w-xs sm:max-w-sm md:max-w-md lg:max-w-125 h-auto object-contain relative z-10 dark:brightness-75 dark:contrast-110"
-                />
+            <div class="relative flex justify-center lg:justify-end items-center w-full lg:w-auto h-60 sm:h-80 md:h-100 lg:h-128 mt-8 lg:mt-0">
+                <video
+                    src="/exp.webm"
+                    autoplay
+                    loop
+                    muted
+                    playsinline
+                    aria-label="Experience animation"
+                    class="w-full max-w-md sm:max-w-[16rem] md:max-w-[20rem] lg:max-w-md h-auto object-contain relative z-10 transition duration-300 ease-in-out dark:brightness-75 dark:contrast-110"
+                    style="background: transparent;"
+                ></video>
             </div>
             </section>
         </div>

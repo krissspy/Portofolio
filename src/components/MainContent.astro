@@ -1,7 +1,7 @@
 <main class="flex-1 w-full max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-center px-4 sm:px-6 lg:px-16 pb-12">
-    
+  <section id="home" class="w-full flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12">
+    <!-- Text Content -->
     <div class="w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left pt-6 sm:pt-10 lg:pt-0">
-      <section id="home"><!-- Home section --> 
         <div class="flex flex-col items-start lg:items-start pl-0 sm:pl-2 md:pl-0">
             
             <h1 class="text-4xl sm:text-5xl md:text-6xl font-normal tracking-[0.2em] text-black dark:text-[#E0E0E0] uppercase ml-0 sm:ml-1 md:ml-2" style="font-family: 'Montserrat Alternates', sans-serif; font-weight: 400;">
@@ -34,14 +34,13 @@
                 <span class="absolute -bottom-8 sm:-bottom-10 -right-2 sm:-right-1 text-3xl sm:text-5xl md:text-4xl text-[#D0A98F] dark:text-[#8a7363] font-serif font-black">"</span>
             </div>
         </div>
-    </div> 
-  <div class="w-full lg:w-1/2 h-60 sm:h-80 md:h-100 lg:h-175 relative mt-12 sm:mt-16 lg:mt-0 flex justify-center lg:justify-end items-end">
-        
-        <img 
-            src="/home-picture.webp"
-            alt="Hafid Krisna" 
-            class="max-w-xs sm:max-w-sm md:max-w-md lg:max-w-150 h-auto object-contain relative z-10 transition duration-300 ease-in-out dark:brightness-75 dark:contrast-110"
-        />
     </div>
-    </section>
+    
+    <!-- Video Content -->
+    <div class="w-full lg:w-1/2 h-60 sm:h-80 md:h-100 lg:h-128 relative flex justify-center lg:justify-end items-center">
+        <video autoplay loop muted playsinline class="w-full h-auto max-h-full object-contain transition duration-300 ease-in-ou dark:brightness-75 dark:contrast-110" style="background: transparent;">
+            <source src="/coba.webm" type="video/webm" />
+        </video>
+    </div>
+  </section>
 </main>
