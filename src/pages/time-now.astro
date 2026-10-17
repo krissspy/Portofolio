@@ -1,0 +1,33 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Time Now - Hafid Krisna">
+    <main class="grid flex-1 place-items-center px-4 text-stone-950 dark:text-stone-100">
+        <time
+            id="clock"
+            class="whitespace-nowrap font-inter text-[clamp(1.5rem,14vw,13rem)] font-medium tabular-nums tracking-normal"
+            aria-label="Waktu lokal"
+        ><span id="clock-hours">00</span><span class="font-extralight">:</span><span id="clock-minutes">00</span><span class="font-extralight">:</span><span id="clock-seconds">00</span></time>
+    </main>
+</Layout>
+
+<script>
+    const clock = document.querySelector<HTMLTimeElement>('#clock');
+    const hours = document.querySelector<HTMLElement>('#clock-hours');
+    const minutes = document.querySelector<HTMLElement>('#clock-minutes');
+    const seconds = document.querySelector<HTMLElement>('#clock-seconds');
+
+    function updateClock() {
+        if (!clock || !hours || !minutes || !seconds) return;
+
+        const now = new Date();
+        hours.textContent = String(now.getHours()).padStart(2, '0');
+        minutes.textContent = String(now.getMinutes()).padStart(2, '0');
+        seconds.textContent = String(now.getSeconds()).padStart(2, '0');
+        clock.dateTime = now.toISOString();
+    }
+
+    updateClock();
+    window.setInterval(updateClock, 1000);
+</script>
